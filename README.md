@@ -1,6 +1,6 @@
 Dotfiles
 ========
-My OSX dotfiles
+My dotfiles
 
 
 Inspired by

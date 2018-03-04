@@ -1,0 +1,101 @@
+[include]
+
+	path = ~/.gitconfig.local
+
+[core]
+
+	excludesfile = ~/.gitignore_global
+	editor = vim
+	pager = less -iXFR
+
+	# Make `git rebase` safer on macOS
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+
+[commit]
+
+	# https://help.github.com/articles/signing-commits-using-gpg/
+	# gpgsign = true
+
+[diff "bin"]
+
+	# Use `hexdump` to diff binary files
+	textconv = hexdump -v -C
+
+[difftool "sourcetree"]
+
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+
+[mergetool "sourcetree"]
+
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[commit]
+
+	template = /Users/andrei/.stCommitMsg
+
+[diff]
+
+	tool = p4merge
+
+[difftool "p4merge"]
+
+	path = /Applications/p4merge.app/Contents/MacOS/p4merge
+
+[difftool]
+
+	prompt = false
+
+[merge]
+
+	tool = p4merge
+
+[mergetool "p4merge"]
+
+	path = /Applications/p4merge.app/Contents/MacOS/p4merge
+
+[mergetool]
+
+	prompt = false
+
+[alias]
+
+	# Show commits history
+	hist = log --oneline --graph --decorate --all
+
+	# Status in short format
+	s = status -s
+
+	# List of all remotes
+	remotes = remote -v
+
+	# List of all branches
+	branches = branch -a
+
+	# List of all aliases
+	aliases = config --get-regexp alias
+
+	# Show the diff between the latest commit and the current state
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	# Shows the diff between the state `$number` revisions ago and the current state
+	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+	# Pull in remote changes for the current repository and all its submodules
+	p = !"git pull; git submodule foreach git pull origin master"
+
+	# Clone a repository including all submodules
+	c = clone --recursive
+
+	# Switch to a branch, creating it if necessary
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+	# Interactive rebase with the given number of latest commits
+	reb = "!r() { git rebase -i HEAD~$1; }; r"
+
+[push]
+
+	default = simple
+
