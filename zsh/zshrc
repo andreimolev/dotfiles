@@ -60,6 +60,7 @@ plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source aws_zsh_completer.sh
 
 # User configuration
 
