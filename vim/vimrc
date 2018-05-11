@@ -21,6 +21,7 @@ call vundle#end()
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
 
+set ic
 set re=1
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
@@ -49,6 +50,16 @@ set wildmode=longest,list,full
 
 " Enable faster switch to NORMAL mode
 set timeoutlen=1000 ttimeoutlen=10
+
+" Turning on Hybrid line numbers
+" https://jeffkreeftmeijer.com/vim-number/
+set number relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
