@@ -29,6 +29,7 @@ install_app "p7zip"
 install_app "unrar"
 install_app "youtube-dl"
 install_app "socat"
+install_app "flux"
 
 install_app "vim"
 install_app "the_silver_searcher"
