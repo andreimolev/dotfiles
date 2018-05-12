@@ -52,6 +52,7 @@ modal.states = {
                         hs.hints.windowHints(wns, nil, true)
                         fsm:toIdle() end)
       self.hotkeyModal:bind("", "h", nil, function() windows.activateApp("Google Chrome", 2); fsm:toIdle() end)
+      self.hotkeyModal:bind({"ctrl"}, "l", nil, function() hs.caffeinate.lockScreen(); fsm:toIdle() end)
 
       for key, app in pairs({
          y = "Intellij IDEA CE",
