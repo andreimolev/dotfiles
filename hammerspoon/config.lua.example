@@ -1,0 +1,61 @@
+-- Configuration file
+-- This file is a template. Copy it to config.lua and customize according to your needs
+config = {}
+
+-- Format reminder:
+--  { "Keyboard key" = { "Application Name", WindowToggle }
+-- If WindowToggle flag is set, pushing Key with Command modifier Toggles active window of an application
+local applications = {
+   y =     { "Intellij IDEA CE",  false },
+   u =     { "Kiwi for Gmail",    false },
+   i =     { "iTerm2",            false },
+   o =     { "Google Chrome",     true  },
+   p =     { "Radiant Player",    false },
+   f =     { "Finder",            true  },
+   ['['] = { "Viber",             false },
+   [']'] = { "Skype",             false },
+   k =     { "Calendar",          false },
+   [';'] = { "Trello",            false },
+}
+
+-- Define displays layouts
+--   Format reminder:
+--     { "App name", "Display Number (from left to right)", "unitrect" },
+local displayLayouts = {
+  -- Single Display
+  {
+    { "Intellij IDEA CE", 1,  hs.layout.maximized },
+    { "Kiwi for Gmail",   1,  hs.layout.maximized },
+    { "iTerm2",           1,  hs.layout.maximized },
+    { "Google Chrome",    1,  hs.layout.maximized },
+    { "Radiant Player",   1,  hs.layout.maximized },
+    { "Finder",           1,  hs.layout.maximized },
+    { "Viber",            1,  hs.layout.maximized },
+    { "Skype",            1,  hs.layout.maximized },
+    { "Trello",           1,  hs.layout.maximized },
+    { "Calendar",         1,  hs.layout.maximized },
+  },
+  -- Dual displays
+  {
+    { "Intellij IDEA CE", 1,  hs.layout.maximized },
+    { "Kiwi for Gmail",   1,  hs.layout.maximized },
+    { "iTerm2",           2,  hs.layout.maximized },
+    { "Google Chrome",    1,  hs.layout.maximized },
+    { "Radiant Player",   1,  hs.layout.maximized },
+    { "Finder",           1,  hs.layout.maximized },
+    { "Viber",            2,  hs.layout.left50    },
+    { "Skype",            2,  hs.layout.right50   },
+    { "Trello",           1,  hs.layout.left50    },
+    { "Calendar",         1,  hs.layout.right50   },
+  },
+}
+
+function config.getApplications()
+  return applications
+end
+
+function config.getDisplayLayouts()
+  return displayLayouts
+end
+
+return config

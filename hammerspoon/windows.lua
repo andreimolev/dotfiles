@@ -1,3 +1,4 @@
+require "tabletools"
 local windows = {}
 local utils = require "utils"
 
@@ -128,15 +129,18 @@ windows.highlighActiveWin = function()
 end
 
 -- activates app by a given appName
-windows.activateApp = function(appName, index)
+windows.activateApp = function(appName, toggleWindow)
   hs.application.launchOrFocus(appName)
+  print(appName, toggleWindow)
+  local app = hs.application.find(appName)
 
-  index = index or 1
-  local apps = {hs.application.find(appName)}
-  local app = apps[index]
---  if next(app) != nil then
   if (app) then
     app:activate()
+    if (toggleWindow == true) then
+      notify("Screens layout updated")
+      allWindows = app:allWindows()
+      allWindows[#allWindows]:becomeMain()
+    end
     hs.timer.doAfter(0.05, windows.highlighActiveWin)
     app:unhide()
   end

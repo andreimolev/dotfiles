@@ -3,8 +3,7 @@ local stateMachine = require "statemachine"
 local utils = require "utils"
 local windows = require "windows"
 local layout = require "layout"
-
--- local log = hs.logger.new('modal-module','debug')
+local config = require "config"
 
 modal.displayModalText = function(txt)
   hs.alert.closeAll()
@@ -43,6 +42,9 @@ modal.states = {
       if self.hotkeyModal then
         self.hotkeyModal:enter()
       else
+        -- Ctrl-Option-Command-Space is the hotkey to enter the Main Modal
+        -- Use Karabiner to rebind this hotkey to LeftCommand-Space,
+        -- leaving RightCommand-Space free for other useful action
         self.hotkeyModal = hs.hotkey.modal.new({"ctrl", "option", "cmd"}, "space")
       end
       self.hotkeyModal:bind("","space", nil, function() fsm:toIdle(); windows.activateApp("Alfred 3") end)
@@ -53,29 +55,26 @@ modal.states = {
                         local wns = hs.fnutils.filter(hs.window.allWindows(), filterAllowedApps)
                         hs.hints.windowHints(wns, nil, true)
                         fsm:toIdle() end)
-      self.hotkeyModal:bind("", "h", nil, function() windows.activateApp("Google Chrome", 2); fsm:toIdle() end)
       self.hotkeyModal:bind({"ctrl"}, "l", nil, function() hs.caffeinate.lockScreen(); fsm:toIdle() end)
+      self.hotkeyModal:bind("","escape", function() fsm:toIdle() end)
 
-      for key, app in pairs({
-         y = "Intellij IDEA CE",
-         u = "Kiwi for Gmail",
-         i = "iTerm2",
-         o = "Google Chrome",
-         p = "Radiant Player",
-         ['['] = "Viber",
-         [']'] = "Skype",
-         k = "Calendar",
-         [';'] = "Trello"})
-      do
-       self.hotkeyModal:bind("", key, function()
-                               windows.activateApp(app)
-                               fsm:toIdle()
-       end)
+      local applications = config.getApplications()
+
+      -- Binding keys for configured apps
+      for key, app in pairs(applications) do
+       self.hotkeyModal:bind("", key, function() windows.activateApp(app[1], false) fsm:toIdle() end)
+       if (app[2] == true) then
+         self.hotkeyModal:bind({"command"}, key, function() windows.activateApp(app[1], true) fsm:toIdle() end)
+       end
       end
 
-      self.hotkeyModal:bind("","escape", function() fsm:toIdle() end)
+      -- Hint displayed in main Modal
+      hintText = "w \t- windows\nj \t- jump\nm \t- media\nr \t- refresh layout\n"
+      for key, app in pairs(applications) do
+        hintText = hintText .. "\n" .. key .. "\t- " .. app[1]
+      end
       function self.hotkeyModal:entered()
-        modal.displayModalText "w \t- windows\nj \t- jump\nm - media\n\ny\t- IDEA\nu\t- Gmail\ni\t- Terminal\no\t- Chrome\np\t- Music Player\n[\t- Viber\n]\t- Skype\n;\t- Trello"
+        modal.displayModalText(hintText)
       end
     end
   }
