@@ -333,6 +333,9 @@ you should place your code here."
   ;; Customizing Org Mode Header Size
   (add-hook 'org-mode-hook (lambda () (set-face-attribute 'org-level-1 nil :height 1.5)))
   (add-hook 'org-mode-hook (lambda () (set-face-attribute 'org-level-2 nil :height 1.2)))
+
+  ;; Enable image resizing
+  (setq org-image-actual-width nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
