@@ -61,6 +61,9 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
+" Langmap to allow using Russian symbols in command mode
+set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+
 " OpenSSL symmetric encryption/decryption of *.enc files
 augroup enc
 autocmd!
