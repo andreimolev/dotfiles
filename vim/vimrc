@@ -64,6 +64,11 @@ augroup END
 " Langmap to allow using Russian symbols in command mode
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
+" Spell checking for English and Russian
+" Dictionaries http://ftp.vim.org/vim/runtime/spell/
+" Location ~/.vim/spell
+setlocal spell spelllang=en_us,ru_ru
+
 " OpenSSL symmetric encryption/decryption of *.enc files
 augroup enc
 autocmd!
