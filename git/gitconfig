@@ -38,7 +38,8 @@
 
 [diff]
 
-	tool = p4merge
+#	tool = p4merge
+	tool = vimdiff
 
 [difftool "p4merge"]
 
@@ -50,7 +51,8 @@
 
 [merge]
 
-	tool = p4merge
+#	tool = p4merge
+	tool = vimdiff
 
 [mergetool "p4merge"]
 
