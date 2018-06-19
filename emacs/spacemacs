@@ -385,6 +385,8 @@ you should place your code here."
   ;; Key maps
   ;; Remap SPC-TAB to circle buffers
   (spacemacs/set-leader-keys "TAB" 'previous-buffer)
+  ;; Remap SPC-m-\ to toggle inline images
+  (spacemacs/set-leader-keys "m\\" 'org-toggle-inline-images)
 
   ;; Setting 'Source Code Pro for Powerline' font
 ;;  (spacemacs/set-font "Source Code Pro for Powerline" 12)
@@ -392,6 +394,13 @@ you should place your code here."
   ;; Setting location of *.jar files, needed for evaluation by babel
   (setq org-ditaa-jar-path "~/bin/jar/ditaa.jar")
   (setq org-plantuml-jar-path "~/bin/jar/plantuml.jar")
+
+  ;; Setting capture templates
+  (setq org-capture-templates
+        '(
+          ("w" "Word" entry (file "~/org/personal/anki.org")
+           "* Item\n  :PROPERTIES:\n  :ANKI_DECK: My English Words\n  :ANKI_NOTE_TYPE: Basic\n  :END:\n** Front\n   %?%^{prompt}\n** Back\n   %^{prompt}")
+          ))
 
   )
 
