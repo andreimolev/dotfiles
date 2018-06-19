@@ -341,6 +341,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (and
      (not (string= lang "ditaa"))
      (not (string= lang "plantuml"))
+     (not (string= lang "dot"))
      )
     )
   (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
