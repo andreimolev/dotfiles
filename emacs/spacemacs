@@ -51,6 +51,8 @@ values."
      syntax-checking
      ;; version-control
      plantuml
+     ;; Enable auto-dictionary-mode
+     (spell-checking :variables spell-checking-enable-auto-dictionary t)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -365,10 +367,6 @@ you should place your code here."
 
   ;; Enable image resizing
   (setq org-image-actual-width nil)
-
-  ;; Enable auto-dictionary-mode
-  (setq-default dotspacemacs-configuration-layers
-                '((spell-checking :variables spell-checking-enable-auto-dictionary t)))
 
   ;; Use aspell for spell check
   (setq ispell-program-name "/usr/local/bin/aspell")
