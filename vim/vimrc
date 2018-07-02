@@ -139,6 +139,9 @@ nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
+" Unmap C-a, since it's interferring with remote tmux modifier
+map <silent> <c-a> :exe ""<CR>
+
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
 
