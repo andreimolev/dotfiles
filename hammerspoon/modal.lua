@@ -56,6 +56,7 @@ modal.states = {
                         hs.hints.windowHints(wns, nil, true)
                         fsm:toIdle() end)
       self.hotkeyModal:bind({"ctrl"}, "l", nil, function() hs.caffeinate.lockScreen(); fsm:toIdle() end)
+      self.hotkeyModal:bind({"ctrl"}, "r", nil, function() hs.reload(); fsm:toIdle() end)
       self.hotkeyModal:bind("","escape", function() fsm:toIdle() end)
 
       local applications = config.getApplications()
