@@ -63,9 +63,9 @@ modal.states = {
 
       -- Binding keys for configured apps
       for key, app in pairs(applications) do
-       self.hotkeyModal:bind("", key, function() windows.activateApp(app[1], false) fsm:toIdle() end)
-       if (app[2] == true) then
-         self.hotkeyModal:bind({"command"}, key, function() windows.activateApp(app[1], true) fsm:toIdle() end)
+       self.hotkeyModal:bind("", key, function() windows.activateApp(app[1], app[2], false) fsm:toIdle() end)
+       if (app[3] == true) then
+         self.hotkeyModal:bind({"command"}, key, function() windows.activateApp(app[1], app[2], true) fsm:toIdle() end)
        end
       end
 

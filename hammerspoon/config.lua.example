@@ -6,16 +6,18 @@ config = {}
 --  { "Keyboard key" = { "Application Name", WindowToggle }
 -- If WindowToggle flag is set, pushing Key with Command modifier Toggles active window of an application
 local applications = {
-   y =     { "Intellij IDEA CE",  false },
-   u =     { "Kiwi for Gmail",    false },
-   i =     { "iTerm2",            false },
-   o =     { "Google Chrome",     true  },
-   p =     { "Radiant Player",    false },
-   f =     { "Finder",            true  },
-   ['['] = { "Viber",             false },
-   [']'] = { "Skype",             false },
-   k =     { "Calendar",          false },
-   [';'] = { "Trello",            false },
+   y =     { "Intellij IDEA CE",                  "Intellij IDEA",                     true  },
+   g =     { "PyCharm CE",                        "PyCharm",                           true  },
+   i =     { "iTerm",                             "iTerm2",                            false },
+   o =     { "Firefox",                           "Firefox",                           true  },
+   c =     { "Google Chrome",                     "Google Chrome",                     true  },
+   f =     { "Finder",                            "Finder",                            true  },
+   k =     { "Calendar",                          "Calendar",                          false },
+   e =     { "/Applications/Emacs.app/",          "Emacs",                             false },
+   a =     { "Anki",                              "Anki",                              false },
+   v =     { "Visual Studio Code",                "Visual Studio Code",                false },
+   q =     { "VLC",                               "VLC",                               false },
+   s =     { "Sourcetree",                        "Sourcetree",                        true  },
 }
 
 -- Define displays layouts

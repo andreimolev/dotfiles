@@ -99,8 +99,8 @@ local bind = function(hotkeyMmodal, fsm)
   -- quick jump to the last window
   hotkeyMmodal:bind({}, 'w', hs.fnutils.partial(jumpToLastWindow, fsm))
   -- moving windows between monitors
-  hotkeyMmodal:bind({}, 'p', function() undo:push(); fw():moveOneScreenNorth() end)
-  hotkeyMmodal:bind({}, 'n', function() undo:push(); fw():moveOneScreenSouth() end)
+  hotkeyMmodal:bind({}, 'p', function() undo:push(); fw():moveOneScreenWest() end)
+  hotkeyMmodal:bind({}, 'n', function() undo:push(); fw():moveOneScreenEast() end)
 end
 
 function undo:push()
@@ -129,10 +129,10 @@ windows.highlighActiveWin = function()
 end
 
 -- activates app by a given appName
-windows.activateApp = function(appName, toggleWindow)
+windows.activateApp = function(appName, windowName, toggleWindow)
   hs.application.launchOrFocus(appName)
   print(appName, toggleWindow)
-  local app = hs.application.find(appName)
+  local app = hs.application.find(windowName)
 
   if (app) then
     app:activate()
