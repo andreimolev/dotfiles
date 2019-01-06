@@ -20,9 +20,15 @@ modal.addState = function(name,state)
   modal.states[name] = state
 end
 
+-- Filtering applications having dedicated hotkeys
 local filterAllowedApps = function(w)
-  local allowedApps = {"Emacs", "iTerm2"}
-  if (not w:isStandard()) and (not hs.fnutils.contains(allowedApps, w:application():name())) then
+  local applications = config.getApplications()
+  local allowedApps = {}
+  for key, app in pairs(applications) do
+    allowedApps[app[2]] = app[2]
+  end
+  --local allowedApps = {"Emacs", "iTerm2", "VLC", }
+  if (hs.fnutils.contains(allowedApps, w:application():name())) then
     return false;
   end
   return true;
