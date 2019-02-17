@@ -1,0 +1,32 @@
+{
+    "window.zoomLevel": 0,
+    "python.pythonPath": "/usr/local/bin/python3",
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "update.channel": "none",
+    "editor.wordWrap": "on",
+    "vim.useSystemClipboard": true,
+    "editor.lineNumbers": "relative",
+    "terminal.integrated.fontFamily": "Hack",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.alwaysShowStatus": true,
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+    },
+    "[json]": {
+        "editor.tabSize": 2,
+    },
+    "[html]": {
+        "editor.tabSize": 2,
+    },
+    "[css]": {
+        "editor.tabSize": 2,
+    },
+    "[typescript]": {
+        "editor.tabSize": 2,
+    },
+}
