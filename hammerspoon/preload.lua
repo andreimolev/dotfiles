@@ -19,6 +19,9 @@ configFileWatcher =
 -- ensure CLI installed
 hs.ipc.cliInstall()
 
+-- The size of the text
+hs.alert.defaultStyle.textSize = 20
+
 -- helpful aliases
 i = hs.inspect
 fw = hs.window.focusedWindow

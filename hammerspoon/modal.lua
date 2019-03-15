@@ -24,6 +24,7 @@ end
 local filterAllowedApps = function(w)
   local applications = config.getApplications()
   local allowedApps = {}
+  allowedApps["Hammerspoon"] = "Hammerspoon"
   for key, app in pairs(applications) do
     allowedApps[app[2]] = app[2]
   end
