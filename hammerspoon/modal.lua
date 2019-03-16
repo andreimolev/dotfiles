@@ -55,9 +55,9 @@ modal.states = {
         self.hotkeyModal = hs.hotkey.modal.new({"ctrl", "option", "cmd"}, "space")
       end
       self.hotkeyModal:bind("","space", nil, function() fsm:toIdle(); windows.activateApp("Alfred 3") end)
-      self.hotkeyModal:bind("","w", nil, function() fsm:toWindows() end)
+      self.hotkeyModal:bind("","w", nil, function() fsm:toIdle(); fsm:toWindows() end)
       self.hotkeyModal:bind("","r", nil, function() fsm:toIdle(); layout.layoutUpdate() end)
-      self.hotkeyModal:bind("","m", nil, function() fsm:toMedia() end)
+      self.hotkeyModal:bind("","m", nil, function() fsm:toIdle(); fsm:toMedia() end)
       self.hotkeyModal:bind("","j", nil, function()
                         local wns = hs.fnutils.filter(hs.window.allWindows(), filterAllowedApps)
                         hs.hints.windowHints(wns, nil, true)
