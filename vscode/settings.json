@@ -7,7 +7,7 @@
     "editor.wordWrap": "on",
     "vim.useSystemClipboard": true,
     "editor.lineNumbers": "relative",
-    "terminal.integrated.fontFamily": "Hack",
+    //    "terminal.integrated.fontFamily": "Hack",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "eslint.autoFixOnSave": true,
@@ -29,4 +29,14 @@
     "[typescript]": {
         "editor.tabSize": 2,
     },
+    //    "markdown-pdf.scale": 0.8,
+    "markdown-pdf.displayHeaderFooter": false,
+    //    "markdown-pdf.highlightStyle": "github.css",
+    "markdown-pdf.margin.left": "0.5cm",
+    "markdown-pdf.margin.top": "0.5cm",
+    "markdown-pdf.margin.right": "0.5cm",
+    "markdown-pdf.margin.bottom": "0.5cm",
+    "markdown-pdf.styles": [
+        ".vscode/markdown-pdf.css"
+    ],
 }
