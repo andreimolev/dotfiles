@@ -7,7 +7,9 @@
     "editor.wordWrap": "on",
     "vim.useSystemClipboard": true,
     "editor.lineNumbers": "relative",
-    //    "terminal.integrated.fontFamily": "Hack",
+    "terminal.integrated.fontFamily": "Hack",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.lineHeight": 1,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "eslint.autoFixOnSave": true,
@@ -39,4 +41,9 @@
     "markdown-pdf.styles": [
         ".vscode/markdown-pdf.css"
     ],
+    "python.jediEnabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.terminal.executeInFileDir": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }
