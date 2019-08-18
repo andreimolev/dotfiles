@@ -1,49 +1,96 @@
 {
-    "window.zoomLevel": 0,
-    "python.pythonPath": "/usr/local/bin/python3",
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
-    "update.channel": "none",
-    "editor.wordWrap": "on",
-    "vim.useSystemClipboard": true,
-    "editor.lineNumbers": "relative",
-    "terminal.integrated.fontFamily": "Hack",
-    "terminal.integrated.fontSize": 12,
-    "terminal.integrated.lineHeight": 1,
+  "window.zoomLevel": 0,
+  "window.titleBarStyle": "custom",
+  "window.nativeTabs": false,
+  "python.pythonPath": "/usr/local/bin/python3",
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "update.mode": "none",
+  "editor.wordWrap": "on",
+  "vim.useSystemClipboard": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "terminal.integrated.fontFamily": "Hack",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.lineHeight": 1,
+  //    "editor.fontFamily": "Source Code Pro",
+  "editor.fontFamily": "Dank Mono",
+  "editor.fontSize": 15,
+  "editor.lineHeight": 21,
+  //    "editor.cursorBlinking": "solid",
+  "editor.cursorWidth": 3,
+  "editor.letterSpacing": 0.5,
+  "editor.fontWeight": "400",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  //  "prettier.eslintIntegration": true,
+  "prettier.tslintIntegration": false,
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "[javascript]": {
+    "editor.tabSize": 2,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "eslint.autoFixOnSave": true,
-    "eslint.alwaysShowStatus": true,
-    "[javascript]": {
-        "editor.tabSize": 2,
-        "editor.formatOnPaste": true,
-        "editor.formatOnSave": true,
-    },
-    "[json]": {
-        "editor.tabSize": 2,
-    },
-    "[html]": {
-        "editor.tabSize": 2,
-    },
-    "[css]": {
-        "editor.tabSize": 2,
-    },
-    "[typescript]": {
-        "editor.tabSize": 2,
-    },
-    //    "markdown-pdf.scale": 0.8,
-    "markdown-pdf.displayHeaderFooter": false,
-    //    "markdown-pdf.highlightStyle": "github.css",
-    "markdown-pdf.margin.left": "0.5cm",
-    "markdown-pdf.margin.top": "0.5cm",
-    "markdown-pdf.margin.right": "0.5cm",
-    "markdown-pdf.margin.bottom": "0.5cm",
-    "markdown-pdf.styles": [
-        ".vscode/markdown-pdf.css"
-    ],
-    "python.jediEnabled": false,
-    "python.linting.pylintEnabled": true,
-    "python.terminal.executeInFileDir": true,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "[html]": {
+    "editor.tabSize": 2
+  },
+  "[css]": {
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.tabSize": 2
+  },
+  //    "markdown-pdf.scale": 0.8,
+  "markdown-pdf.displayHeaderFooter": false,
+  //    "markdown-pdf.highlightStyle": "github.css",
+  "markdown-pdf.margin.left": "0.5cm",
+  "markdown-pdf.margin.top": "0.5cm",
+  "markdown-pdf.margin.right": "0.5cm",
+  "markdown-pdf.margin.bottom": "0.5cm",
+  "markdown-pdf.styles": [
+    ".vscode/markdown-pdf.css"
+  ],
+  "python.jediEnabled": false,
+  "python.linting.pylintEnabled": true,
+  "python.terminal.executeInFileDir": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.watcherExclude": {
+    "**/build/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true
+  },
+  "files.exclude": {
+    ".viceroy": true,
+    "apollo-overrides": true,
+    "release-info": true,
+    "src/*/build": false,
+    "build": true,
+    "env": true,
+    "packageInfo*": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  },
+  "search.exclude": {
+    "env": true,
+    "src/*/build": true,
+    "build": true,
+    "**/node_modules": true,
+    "**/bower_components": true
+  },
+  "viceroy.config.lastVersion": "0.19.200268",
+  "viceroy.config.internal.lastUpdateTime": "2019-07-27T10:24:47.470Z",
+  "viceroy.config.internal.zeroDowntimeColour": "blue",
+  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Monokai Pro",
+  "workbench.iconTheme": "vscode-icons"
 }
