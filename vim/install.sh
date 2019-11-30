@@ -25,5 +25,23 @@ ln -sf "$DOTFILES"/vim/vimrc.bundles.local "$HOME"/.vimrc.bundles.local
 git clone https://github.com/VundleVim/Vundle.vim "$DOTFILES"/vim/bundle/Vundle.vim
 vim -c "PluginInstall!" -c "q" -c "q"
 
+#######################################################################################
+# Download Spell files from VIM
+
+mkdir -p ~/.vim/spell
+
+wget http://ftp.vim.org/vim/runtime/spell/en.utf-8.spl -P ~/.vim/spell
+wget http://ftp.vim.org/vim/runtime/spell/en.utf-8.sug -P ~/.vim/spell
+
+wget http://ftp.vim.org/vim/runtime/spell/ru.utf-8.spl -P ~/.vim/spell
+wget http://ftp.vim.org/vim/runtime/spell/ru.utf-8.sug -P ~/.vim/spell
+
+wget http://ftp.vim.org/vim/runtime/spell/ru.koi8-r.spl -P ~/.vim/spell
+wget http://ftp.vim.org/vim/runtime/spell/ru.koi8-r.sug -P ~/.vim/spell
+
+wget http://ftp.vim.org/vim/runtime/spell/ru.cp1251.spl -P ~/.vim/spell
+wget http://ftp.vim.org/vim/runtime/spell/ru.cp1251.sug -P ~/.vim/spell
+
+
 printf "vim: OK: Completed\n"
 
