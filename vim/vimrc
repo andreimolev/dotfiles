@@ -130,13 +130,28 @@ noremap <C-l> <C-w>l
 noremap <leader>l :Align
 nnoremap <leader>a :Ag<space>
 nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>d :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>f :NERDTreeToggle<CR>
+" nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>t :CtrlPMRU<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
+
+" Remapping keys to use black hole register on deleting
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+xnoremap p "_dP
+xnoremap P "_dP
+
+" Use ,d and ,D for cut
+nnoremap <leader>d "*d
+nnoremap <leader>D "*D
+vnoremap <leader>d "*d
+
+" nnoremap <leader>p "_dP
+" nnoremap <leader>x "_x
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " Unmap C-a, since it's interferring with remote tmux modifier
