@@ -65,6 +65,8 @@ source aws_zsh_completer.sh
 # User configuration
 
 bindkey -r "^R"
+bindkey '^[[1;5C' forward-word                        # [Ctrl-RightArrow] - move forward one word
+bindkey '^[[1;5D' backward-word                       # [Ctrl-LeftArrow] - move backward one word
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
