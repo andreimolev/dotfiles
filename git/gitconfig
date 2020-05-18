@@ -12,6 +12,8 @@
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 	trustctime = false
 
+	filemode = true
+
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
