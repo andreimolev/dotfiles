@@ -48,6 +48,9 @@ set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
 
+" Show count of search results [x/y] at the bottom of the screen
+set shortmess-=S
+
 " Enable faster switch to NORMAL mode
 set timeoutlen=1000 ttimeoutlen=10
 
