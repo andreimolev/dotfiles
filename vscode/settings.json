@@ -1,5 +1,5 @@
 {
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "window.titleBarStyle": "custom",
   "window.nativeTabs": false,
   "python.pythonPath": "/usr/local/bin/python3",
@@ -142,7 +142,7 @@
   "viceroy.config.internal.zeroDowntimeColour": "blue",
   "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Monokai Pro",
-  "workbench.iconTheme": "vscode-icons"
+  "workbench.iconTheme": "vscode-icons",
   "[typescriptreact]": {
     "editor.tabSize": 2,
     "editor.formatOnPaste": true,

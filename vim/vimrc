@@ -219,3 +219,5 @@ if filereadable(expand("~/.vimrc.local"))
 endif
 
 hi Normal guibg=NONE ctermbg=NONE
+
+let g:snipMate = { 'snippet_version' : 1 }
