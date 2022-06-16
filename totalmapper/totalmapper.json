@@ -1,0 +1,16 @@
+{
+  "mappings": [
+    { "from": [ "CAPSLOCK" ], "to": [ "LEFTCTRL" ] },
+    { "from": [ "LEFTALT", "H" ], "to": [ "LEFT" ] },
+    { "from": [ "LEFTALT", "K" ], "to": [ "UP" ] },
+    { "from": [ "LEFTALT", "J" ], "to": [ "DOWN" ] },
+    { "from": [ "LEFTALT", "L" ], "to": [ "RIGHT" ] },
+    { "from": [ "LEFTALT", "0" ], "to": [ "HOME" ] },
+    { "from": [ "LEFTALT", "4" ], "to": [ "END" ] },
+    { "from": [ "GRAVE" ], "to": [ "ESC" ] },
+    { "from": [ "RIGHTALT", "GRAVE" ], "to": [ "GRAVE" ] },
+    { "from": [ "LEFTSHIFT", "GRAVE" ], "to": [ "LEFTSHIFT", "GRAVE" ] },
+    { "from": [ "RIGHTSHIFT", "GRAVE" ], "to": [ "RIGHTSHIFT", "GRAVE" ] },
+    { "from": [ "RIGHTALT", "CAPSLOCK" ], "to": [ "CAPSLOCK" ] }
+  ]
+}
