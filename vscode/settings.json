@@ -1,5 +1,4 @@
 {
-  "window.zoomLevel": 1,
   "window.titleBarStyle": "custom",
   "window.nativeTabs": false,
   "python.pythonPath": "/usr/local/bin/python3",
@@ -60,11 +59,15 @@
   "editor.fontWeight": "400",
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
-  "eslint.autoFixOnSave": true,
+  //    "eslint.autoFixOnSave": true,
   "eslint.alwaysShowStatus": true,
   "[markdown]": {
     "editor.wordWrap": "on",
-    "editor.quickSuggestions": false,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
     "editor.formatOnPaste": false,
     "editor.formatOnSave": false,
   },
@@ -73,10 +76,10 @@
     "editor.formatOnSave": false,
   },
   "[javascript]": {
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.tabSize": 2,
@@ -90,10 +93,10 @@
     "editor.tabSize": 2
   },
   "[typescript]": {
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   //    "markdown-pdf.scale": 0.8,
   "markdown-pdf.displayHeaderFooter": false,
@@ -144,9 +147,17 @@
   "workbench.colorTheme": "Monokai Pro",
   "workbench.iconTheme": "vscode-icons",
   "[typescriptreact]": {
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "aws.telemetry": false,
+  "[vue]": {
+    "editor.tabSize": 4,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1
 }

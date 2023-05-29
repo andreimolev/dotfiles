@@ -118,3 +118,7 @@
 
 	ui = auto
 
+[init]
+
+	defaultBranch = main
+
