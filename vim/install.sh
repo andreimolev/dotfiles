@@ -30,18 +30,16 @@ vim -c "PluginInstall!" -c "q" -c "q"
 
 mkdir -p ~/.vim/spell
 
-wget http://ftp.vim.org/vim/runtime/spell/en.utf-8.spl -P ~/.vim/spell
-wget http://ftp.vim.org/vim/runtime/spell/en.utf-8.sug -P ~/.vim/spell
+wget https://ftp.nluug.nl/vim/runtime/spell/en.utf-8.spl -P ~/.vim/spell
+wget https://ftp.nluug.nl/vim/runtime/spell/en.utf-8.sug -P ~/.vim/spell
 
-wget http://ftp.vim.org/vim/runtime/spell/ru.utf-8.spl -P ~/.vim/spell
-wget http://ftp.vim.org/vim/runtime/spell/ru.utf-8.sug -P ~/.vim/spell
+wget https://ftp.nluug.nl/vim/runtime/spell/ru.utf-8.spl -P ~/.vim/spell
+wget https://ftp.nluug.nl/vim/runtime/spell/ru.utf-8.sug -P ~/.vim/spell
 
-wget http://ftp.vim.org/vim/runtime/spell/ru.koi8-r.spl -P ~/.vim/spell
-wget http://ftp.vim.org/vim/runtime/spell/ru.koi8-r.sug -P ~/.vim/spell
+wget https://ftp.nluug.nl/vim/runtime/spell/ru.koi8-r.spl -P ~/.vim/spell
+wget https://ftp.nluug.nl/vim/runtime/spell/ru.koi8-r.sug -P ~/.vim/spell
 
-wget http://ftp.vim.org/vim/runtime/spell/ru.cp1251.spl -P ~/.vim/spell
-wget http://ftp.vim.org/vim/runtime/spell/ru.cp1251.sug -P ~/.vim/spell
-
+wget https://ftp.nluug.nl/vim/runtime/spell/ru.cp1251.spl -P ~/.vim/spell
+wget https://ftp.nluug.nl/vim/runtime/spell/ru.cp1251.sug -P ~/.vim/spell
 
 printf "vim: OK: Completed\n"
-
