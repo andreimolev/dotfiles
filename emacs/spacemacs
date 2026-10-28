@@ -587,6 +587,9 @@ before packages are loaded."
   (setq org-agenda-files (quote ("~/org/work"
                                  "~/repos/mine/mydocs/org")))
 
+  ;; No date-time in Done items
+  (setq org-log-done nil)
+
   )
 
 
