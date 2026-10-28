@@ -9,10 +9,10 @@ undo = {}
 
 -- define window movement/resize operation mappings
 local arrowMap = {
-  k = { half = { 0, 0, 1,.5}, movement = { 0,-20}, complement = "h", resize = "Shorter" },
-  j = { half = { 0,.5, 1,.5}, movement = { 0, 20}, complement = "l", resize = "Taller" },
-  h = { half = { 0, 0,.5, 1}, movement = {-20, 0}, complement = "j", resize = "Thinner" },
-  l = { half = {.5, 0,.5, 1}, movement = { 20, 0}, complement = "k", resize = "Wider" },
+  k = { half = { 0, 0, 1,.5}, major = { 0, 0, 1,.7}, movement = { 0,-20}, complement = "h", resize = "Shorter" },
+  j = { half = { 0,.5, 1,.5}, major = { 0,.3, 1,.7}, movement = { 0, 20}, complement = "l", resize = "Taller" },
+  h = { half = { 0, 0,.5, 1}, major = { 0, 0,.7, 1}, movement = {-20, 0}, complement = "j", resize = "Thinner" },
+  l = { half = {.5, 0,.5, 1}, major = {.3, 0,.7, 1}, movement = { 20, 0}, complement = "k", resize = "Wider" },
 }
 
 -- compose screen quadrants from halves
@@ -58,6 +58,10 @@ local function resizeWindow(modal, arrow)
       undo:push()
       rect(arrowMap[arrow].half)()
   end)
+  -- 70% of the screen (capital HJKL)
+  modal:bind({"shift"}, arrow, function()
+      rect(arrowMap[arrow].major)()
+  end)
   -- local thinShort = { h = , }
   -- incrementally
   modal:bind({"alt"}, arrow, function()
@@ -71,7 +75,7 @@ local function resizeWindow(modal, arrow)
       hs.grid['pushWindow'..dir[arrow]](fw())
   end)
 
-  modal:bind({"shift"}, arrow, function()
+  modal:bind({"alt", "shift"}, arrow, function()
       undo:push()
       hs.grid['resizeWindow'..arrowMap[arrow].resize](fw())
   end)
@@ -156,7 +160,7 @@ windows.addState = function(modal)
   modal.addState("windows", {
                    init = function(self, fsm)
                      self.hotkeyModal = hs.hotkey.modal.new()
-                     modal.displayModalText("cmd + hjkl \t jumping\nhjkl \t\t\t\t halves\nalt + hjkl \t\t increments\nshift + hjkl \t resize\nn, p \t next, prev screen\ng \t\t\t\t\t grid\nm \t\t\t\t maximize\nu \t\t\t\t\t undo")
+                     modal.displayModalText("cmd + hjkl \t jumping\nhjkl \t\t\t\t halves\nHJKL \t\t\t\t 70%\nalt + hjkl \t\t increments\nalt + HJKL \t\t resize\nn, p \t next, prev screen\ng \t\t\t\t\t grid\nm \t\t\t\t maximize\nu \t\t\t\t\t undo")
                      self.hotkeyModal:bind("","escape", function() fsm:toIdle() end)
                      self.hotkeyModal:bind({"cmd"}, "space", nil, function() fsm:toMain() end)
                      bind(self.hotkeyModal, fsm)
