@@ -136,7 +136,8 @@ end
 windows.activateApp = function(appName, windowName, toggleWindow)
   hs.application.launchOrFocus(appName)
   print(appName, toggleWindow)
-  local app = hs.application.find(windowName)
+  -- exact match first, then case-insensitive
+  local app = hs.application.find(windowName, true) or hs.application.find(windowName)
 
   if (app) then
     app:activate()
